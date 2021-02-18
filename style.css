@@ -3,27 +3,32 @@ html, body{
 }
 
 fieldset{
-    display: inline-flex;
-    height: 100%;
+    height: 95%;
 }
 
 div{
     padding: 0.5%;
     margin: 0.5%;
     width: 100%;
-    min-height: 75%;
+    min-height: 70%;
+    height: 100%;
     overflow: hidden;
+}
+
+.insider{
+    height: 97%;
+}
+
+.bruh{
+    display: inline-flex;
+    height: 70%;
 }
 
 #IDE{
     width: 60%;
-    min-height: 70%;
-    height: 70%;
 }
 #MemoryViewer{
     width: 30%;
-    min-height: 70%;
-    height: 70%;
 }
 #Console{
     width: 94%;
@@ -33,12 +38,12 @@ div{
 
 textarea{
     width: 98%;
-    height: 95%;
+    height: 92%;
     resize: none;
 }
 
 #Console textarea{
-    height: 80%;
+    height: 75%;
 }
 
 #MemoryViewer div{

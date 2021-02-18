@@ -6,37 +6,37 @@
 	<title>Brainfuck Debugger</title>
 </head>
 <body>
+<div class="bruh">
+	<fieldset id="IDE">
+		<legend>IDE</legend>
+		<div class="insider">
+			<button onclick="play()">Run</button>
+			<button onclick="stop()">Stop</button>
+			<button onclick="reset()">Reset</button>
+			<label>
+				Speed:
+				<input type="range" min="0" max="1000" value="50" id="speed_tick">
+			</label>
+			<span id="speed">50</span>
+			<label>
+				<textarea id="code">Write your code here</textarea>
+			</label>
+		</div>
+	</fieldset>
 
-<fieldset id="IDE">
-	<legend>IDE</legend>
-	<div>
-		<button onclick="play()">Run</button>
-		<button onclick="stop()">Stop</button>
-		<button onclick="reset()">Reset</button>
-		<label>
-			Speed:
-			<input type="range" min="0" max="1000" value="50" id="speed_tick">
-		</label>
-		<span id="speed">50</span>
-		<label>
-			<textarea id="code">Write your code here</textarea>
-		</label>
-	</div>
-</fieldset>
+	<fieldset id="MemoryViewer">
+		<legend>
+			<label>
+				Memory size
+				<input type="number" min="100" max="10000" value="1000" step="100" id="MemSize">
+			</label>
+		</legend>
 
-<fieldset id="MemoryViewer">
-	<legend>
-		<label>
-			Memory size
-			<input type="number" min="100" max="10000" value="1000" step="100" id="MemSize">
-		</label>
-	</legend>
-
-	<br/>
-	<div id="memState">
-	</div>
-</fieldset>
-
+		<br/>
+		<div id="memState" class="insider">
+		</div>
+	</fieldset>
+</div>
 <fieldset id="Console">
 	<legend>Console</legend>
 	<div>
