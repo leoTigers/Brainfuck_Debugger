@@ -9,9 +9,11 @@ let time_interval = 50;
 let symbols = "+-.,[]<>";
 
 function reset(){
+    stop()
     memory_cursor_index = 0;
     ide_cursor_index = 0;
     memory.fill(0);
+    document.getElementById("output").innerHTML = ""
 
     show_memory();
 }
@@ -73,13 +75,13 @@ function show_memory(){
             }
         }
     });
-
     show_memory();
 
     run().then(r => r);
 })();
 
 async function run(){
+    let iter = 0;
     while(PLAYING){
         if (ide_cursor_index === current_code.length){
             stop();
@@ -145,9 +147,21 @@ async function run(){
 
             }
             ide_cursor_index++;
-            show_memory()
 
-            await new Promise(r=>setTimeout(r, time_interval));
+            if(time_interval === 0) {
+                if (iter % 100 === 0){
+                    show_memory()
+                    await new Promise(r=>setTimeout(r, time_interval));
+                }
+            }
+            else{
+                show_memory()
+                await new Promise(r=>setTimeout(r, time_interval));
+            }
+
+            iter++;
         }
     }
+    await new Promise(r=>setTimeout(r, time_interval));
+    show_memory()
 }
