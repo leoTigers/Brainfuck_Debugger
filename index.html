@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+	<title>Brainfuck Debugger</title>
+</head>
+<body>
+
+<fieldset id="IDE">
+	<legend>IDE</legend>
+	<div>
+		<button onclick="play()">Run</button>
+		<button onclick="stop()">Stop</button>
+		<button onclick="reset()">Reset</button>
+		<label>
+			Speed:
+			<input type="range" min="0" max="1000" value="50" id="speed_tick">
+		</label>
+		<span id="speed">50</span>
+		<label>
+			<textarea id="code">Write your code here</textarea>
+		</label>
+	</div>
+</fieldset>
+
+<fieldset id="MemoryViewer">
+	<legend>
+		<label>
+			Memory size
+			<input type="number" min="100" max="10000" value="1000" step="100" id="MemSize">
+		</label>
+	</legend>
+
+	<br/>
+	<div id="memState">
+	</div>
+</fieldset>
+
+<fieldset id="Console">
+	<legend>Console</legend>
+	<div>
+		<label>
+			Output:<br/>
+			<textarea id="output"></textarea>
+		</label>
+		<br/>
+	</div>
+</fieldset>
+
+
+<script type="text/javascript" src="main.js"></script>
+</body>
+</html>

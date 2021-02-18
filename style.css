@@ -1,0 +1,54 @@
+html, body{
+    height: 100%;
+}
+
+fieldset{
+    display: inline-flex;
+    height: 100%;
+}
+
+div{
+    padding: 0.5%;
+    margin: 0.5%;
+    width: 100%;
+    min-height: 75%;
+    overflow: hidden;
+}
+
+#IDE{
+    width: 60%;
+    min-height: 70%;
+    height: 70%;
+}
+#MemoryViewer{
+    width: 30%;
+    min-height: 70%;
+    height: 70%;
+}
+#Console{
+    width: 94%;
+    min-height: 18%;
+    height: 18%;
+}
+
+textarea{
+    width: 98%;
+    height: 95%;
+    resize: none;
+}
+
+#Console textarea{
+    height: 80%;
+}
+
+#MemoryViewer div{
+    color: grey;
+}
+
+.active{
+    color: red;
+}
+
+.used{
+    color:black;
+}
