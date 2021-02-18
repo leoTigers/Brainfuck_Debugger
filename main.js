@@ -83,7 +83,7 @@ function show_memory(){
 async function run(){
     let iter = 0;
     while(PLAYING){
-        if (ide_cursor_index === current_code.length){
+        if (ide_cursor_index >= current_code.length){
             stop();
         }else{
             while(symbols.indexOf(current_code[ide_cursor_index]) === -1){
@@ -160,6 +160,11 @@ async function run(){
             }
 
             iter++;
+        }
+
+        // to avoid a lock
+        if(iter%1000){
+            await new Promise(r=>setTimeout(r, 1));
         }
     }
     await new Promise(r=>setTimeout(r, time_interval));
