@@ -163,7 +163,7 @@ async function run(){
         }
 
         // to avoid a lock
-        if(iter%1000){
+        if(iter%1000 === 0){
             await new Promise(r=>setTimeout(r, 1));
         }
     }
