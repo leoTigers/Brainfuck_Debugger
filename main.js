@@ -86,7 +86,8 @@ async function run(){
         if (ide_cursor_index >= current_code.length){
             stop();
         }else{
-            while(symbols.indexOf(current_code[ide_cursor_index]) === -1){
+            while(symbols.indexOf(current_code[ide_cursor_index]) === -1 &&
+                ide_cursor_index < current_code.length){
                 ide_cursor_index++;
             }
             switch (current_code[ide_cursor_index]){
